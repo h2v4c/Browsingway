@@ -19,6 +19,7 @@ internal static class CefHandler
 		};
 		RootCachePath = settings.RootCachePath;
 		settings.CefCommandLineArgs["autoplay-policy"] = "no-user-gesture-required";
+		settings.CefCommandLineArgs.Add("do-not-de-elevate");
 		settings.EnableAudio();
 		settings.SetOffScreenRenderingBestPerformanceArgs();
 		settings.UserAgentProduct = $"Chrome/{Cef.ChromiumVersion} Browsingway/{Assembly.GetEntryAssembly()?.GetName().Version} (ffxiv_pid {parentPid}; renderer_pid {Environment.ProcessId})";
